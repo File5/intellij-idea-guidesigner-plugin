@@ -5,9 +5,10 @@ import org.gradle.api.Project
 class GuiDesignerModule {
     static void load(Project project) {
         def antClasspath = project.configurations.create('antClasspath')
+        antClasspath.extendsFrom project.configurations.implementation
         antClasspath.defaultDependencies {
-            it.add project.dependencies.create("com.jetbrains.intellij.java:java-compiler-ant-tasks")
-            it.add project.dependencies.create("com.jetbrains.intellij.java:java-gui-forms-rt")
+            it.add project.dependencies.create("com.jetbrains.intellij.java:java-compiler-ant-tasks:+")
+            it.add project.dependencies.create("com.jetbrains.intellij.java:java-gui-forms-rt:+")
         }
 
         def instrumentForms = project.task('instrumentForms') {
@@ -27,6 +28,7 @@ class GuiDesignerModule {
                 )
             }
         }
+        instrumentForms.dependsOn project.tasks.compileJava
         project.tasks.classes.dependsOn instrumentForms
     }
 }

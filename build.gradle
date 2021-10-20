@@ -46,23 +46,6 @@ repositories {
     }
 }
 
-configurations {
-    antClasspath.extendsFrom implementation
-}
-
-dependencies {
-//    implementation 'org.codehaus.groovy:groovy-all:3.0.8'
-//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
-//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-
-    // Intellij IDEA GUI Designer
-    antClasspath "com.jetbrains.intellij.java:java-compiler-ant-tasks:212.5457.59"
-    antClasspath "com.jetbrains.intellij.java:java-gui-forms-rt:212.5457.59"
-
-//    implementation "com.jetbrains.intellij.java:java-compiler-ant-tasks:212.5457.59"
-//    implementation "com.jetbrains.intellij.java:java-gui-forms-rt:212.5457.59"
-}
-
 test {
     useJUnitPlatform()
 }
