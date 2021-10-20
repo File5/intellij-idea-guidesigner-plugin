@@ -4,6 +4,15 @@ import org.gradle.api.Project
 
 class GuiDesignerModule {
     static void load(Project project) {
+        project.repositories.maven {
+            name "instrumentFormsRepository-jetbrains"
+            url "https://www.jetbrains.com/intellij-repository/releases"
+        }
+        project.repositories.maven {
+            name "instrumentFormsRepository-third-party"
+            url "https://cache-redirector.jetbrains.com/intellij-dependencies"
+        }
+
         def antClasspath = project.configurations.create('antClasspath')
         antClasspath.extendsFrom project.configurations.implementation
         antClasspath.defaultDependencies {
