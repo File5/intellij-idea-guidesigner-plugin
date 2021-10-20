@@ -37,7 +37,11 @@ class GuiDesignerModule {
                 )
             }
         }
-        instrumentForms.dependsOn project.tasks.compileJava
-        project.tasks.classes.dependsOn instrumentForms
+        if (project.tasks.findByName "compileJava") {
+            instrumentForms.dependsOn project.tasks.compileJava
+        }
+        if (project.tasks.findByName "classes") {
+            project.tasks.classes.dependsOn instrumentForms
+        }
     }
 }
