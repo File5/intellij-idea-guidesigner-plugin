@@ -28,13 +28,15 @@ class GuiDesignerModule {
                     classname: "com.intellij.ant.InstrumentIdeaExtensions",
                     classpath: project.configurations.antClasspath.asPath
                 )
-                ant.javac2(
-                    includeantruntime: false,
-                    srcdir: project.sourceSets.main.java.sourceDirectories.asPath,
-                    destdir: project.sourceSets.main.output.classesDirs.filter {
-                        it.absolutePath.contains "java"
-                    }.asPath,
-                )
+                project.sourceSets.main.output.classesDirs.filter {
+                    it.directory
+                }.forEach {
+                    ant.javac2(
+                        includeantruntime: false,
+                        srcdir: project.sourceSets.main.allSource.sourceDirectories.asPath,
+                        destdir: it.path,
+                    )
+                }
             }
         }
         if (project.tasks.findByName "compileJava") {
