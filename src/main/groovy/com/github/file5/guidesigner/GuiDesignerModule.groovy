@@ -13,9 +13,9 @@ class GuiDesignerModule {
             url "https://cache-redirector.jetbrains.com/intellij-dependencies"
         }
 
-        def antClasspath = project.configurations.create('antClasspath')
-        antClasspath.extendsFrom project.configurations.implementation
-        antClasspath.defaultDependencies {
+        def formsClasspath = project.configurations.create('formsClasspath')
+        formsClasspath.extendsFrom project.configurations.implementation
+        formsClasspath.defaultDependencies {
             it.add project.dependencies.create("com.jetbrains.intellij.java:java-compiler-ant-tasks:+")
             it.add project.dependencies.create("com.jetbrains.intellij.java:java-gui-forms-rt:+")
         }
@@ -26,7 +26,7 @@ class GuiDesignerModule {
                 ant.taskdef(
                     name: "javac2",
                     classname: "com.intellij.ant.InstrumentIdeaExtensions",
-                    classpath: project.configurations.antClasspath.asPath
+                    classpath: formsClasspath.asPath
                 )
                 project.sourceSets.main.output.classesDirs.filter {
                     it.directory
@@ -41,6 +41,9 @@ class GuiDesignerModule {
         }
         if (project.tasks.findByName "compileJava") {
             instrumentForms.dependsOn project.tasks.compileJava
+        }
+        if (project.tasks.findByName "compileKotlin") {
+            instrumentForms.dependsOn project.tasks.compileKotlin
         }
         if (project.tasks.findByName "classes") {
             project.tasks.classes.dependsOn instrumentForms
