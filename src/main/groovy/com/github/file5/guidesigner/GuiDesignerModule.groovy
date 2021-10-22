@@ -39,14 +39,17 @@ class GuiDesignerModule {
                 }
             }
         }
-        if (project.tasks.findByName "compileJava") {
-            instrumentForms.dependsOn project.tasks.compileJava
+        def compileJava = project.tasks.findByName "compileJava"
+        if (compileJava != null) {
+            instrumentForms.dependsOn compileJava
         }
-        if (project.tasks.findByName "compileKotlin") {
-            instrumentForms.dependsOn project.tasks.compileKotlin
+        def compileKotlin = project.tasks.findByName "compileKotlin"
+        if (compileKotlin != null) {
+            instrumentForms.dependsOn compileKotlin
         }
-        if (project.tasks.findByName "classes") {
-            project.tasks.classes.dependsOn instrumentForms
+        def classes = project.tasks.findByName "classes"
+        if (classes != null) {
+            classes.dependsOn instrumentForms
         }
     }
 }
