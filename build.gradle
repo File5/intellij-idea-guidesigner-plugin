@@ -12,7 +12,7 @@ version '1.0-SNAPSHOT'
 pluginBundle {
     website = 'https://github.com/File5/intellij-idea-guidesigner-plugin'
     vcsUrl = 'https://github.com/File5/intellij-idea-guidesigner-plugin'
-    tags = ['GUI', 'Designer', 'IntelliJ', 'IDEA', 'Swing', 'Java']
+    tags = ['gui-designer', 'intellij-idea', 'intellij', 'idea', 'swing', 'java', 'kotlin']
 }
 
 gradlePlugin {

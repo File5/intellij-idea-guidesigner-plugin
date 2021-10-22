@@ -27,3 +27,12 @@ plugins {
     id 'com.github.file5.guidesigner-plugin' version '1.0.0'
 }
 ```
+
+Add IntelliJ IDEA form components dependency in the module `build.gradle`.
+
+```groovy
+dependencies {
+    // ...
+    implementation "com.intellij:forms_rt:7.0.3"
+}
+```
