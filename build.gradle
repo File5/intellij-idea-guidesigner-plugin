@@ -18,7 +18,7 @@ pluginBundle {
 gradlePlugin {
     plugins {
         guiDesignerPlugin {
-            id = 'io.github.file5.guidesigner-plugin'
+            id = 'io.github.file5.guidesigner'
             displayName = 'Intellij IDEA GUI Designer Plugin'
             description = 'Plugin which enables GUI Designer forms compilation.'
             implementationClass = 'io.github.file5.guidesigner.GuiDesignerPlugin'
