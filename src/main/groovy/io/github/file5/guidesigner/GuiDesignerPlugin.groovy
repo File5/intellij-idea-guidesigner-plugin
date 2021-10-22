@@ -1,4 +1,4 @@
-package com.github.file5.guidesigner
+package io.github.file5.guidesigner
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project

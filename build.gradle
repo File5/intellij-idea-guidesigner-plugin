@@ -6,7 +6,7 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.16.0'
 }
 
-group 'com.github.file5'
+group 'io.github.file5'
 version '1.0-SNAPSHOT'
 
 pluginBundle {
@@ -17,11 +17,11 @@ pluginBundle {
 
 gradlePlugin {
     plugins {
-        greetingsPlugin {
-            id = 'com.github.file5.guidesigner-plugin'
+        guiDesignerPlugin {
+            id = 'io.github.file5.guidesigner-plugin'
             displayName = 'Intellij IDEA GUI Designer Plugin'
             description = 'Plugin which enables GUI Designer forms compilation.'
-            implementationClass = 'com.github.file5.guidesigner.GuiDesignerPlugin'
+            implementationClass = 'io.github.file5.guidesigner.GuiDesignerPlugin'
         }
     }
 }
