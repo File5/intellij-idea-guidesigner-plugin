@@ -10,9 +10,9 @@ group 'com.github.file5'
 version '1.0-SNAPSHOT'
 
 pluginBundle {
-    website = 'https://github.com/File5'
+    website = 'https://github.com/File5/intellij-idea-guidesigner-plugin'
     vcsUrl = 'https://github.com/File5/intellij-idea-guidesigner-plugin'
-    tags = ['gui designer', 'swing', 'intellij idea']
+    tags = ['GUI', 'Designer', 'IntelliJ', 'IDEA', 'Swing', 'Java']
 }
 
 gradlePlugin {
