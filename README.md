@@ -33,6 +33,8 @@ Add IntelliJ IDEA form components dependency in the module `build.gradle`.
 ```groovy
 dependencies {
     // ...
-    implementation "com.intellij:forms_rt:7.0.3"
+    implementation "com.jetbrains.intellij.java:java-gui-forms-rt:+"
+    //noinspection GradlePackageUpdate
+    implementation "com.jgoodies:forms:1.1-preview"
 }
 ```
