@@ -11,15 +11,15 @@ version '1.0-SNAPSHOT'
 
 pluginBundle {
     website = 'https://github.com/File5/intellij-idea-guidesigner-plugin'
-    vcsUrl = 'https://github.com/File5/intellij-idea-guidesigner-plugin'
+    vcsUrl = 'https://github.com/File5/intellij-idea-guidesigner-plugin.git'
     tags = ['gui-designer', 'intellij-idea', 'intellij', 'idea', 'swing', 'java', 'kotlin']
 }
 
 gradlePlugin {
     plugins {
-        guiDesignerPlugin {
+        guidesignerPlugin {
             id = 'io.github.file5.guidesigner'
-            displayName = 'Intellij IDEA GUI Designer Plugin'
+            displayName = 'IntelliJ IDEA GUI Designer Plugin'
             description = 'Plugin which enables GUI Designer forms compilation.'
             implementationClass = 'io.github.file5.guidesigner.GuiDesignerPlugin'
         }
