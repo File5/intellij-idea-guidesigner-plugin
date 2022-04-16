@@ -40,6 +40,7 @@ class GuiDesignerModule {
                                     it.directory
                                 }.asPath,
                                 destdir: it.path,
+                                classpath: formsClasspath.asPath
                         )
                     }
                 }
