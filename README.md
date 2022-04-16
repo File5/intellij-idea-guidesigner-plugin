@@ -24,7 +24,7 @@ after other plugins.
 ```groovy
 plugins {
     // ...
-    id 'io.github.file5.guidesigner' version '1.0.1'
+    id 'io.github.file5.guidesigner' version '1.0.2'
 }
 ```
 
