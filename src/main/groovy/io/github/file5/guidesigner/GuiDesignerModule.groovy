@@ -21,6 +21,7 @@ class GuiDesignerModule {
             formsClasspath.defaultDependencies {
                 it.add project.dependencies.create("com.jetbrains.intellij.java:java-compiler-ant-tasks:+")
                 it.add project.dependencies.create("com.jetbrains.intellij.java:java-gui-forms-rt:+")
+                it.add project.dependencies.create(project.sourceSets.main.runtimeClasspath)
             }
 
             def instrumentForms = project.task('instrumentForms') {
